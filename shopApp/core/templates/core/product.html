@@ -14,8 +14,8 @@
         <div class="col-md-6">
             <h2>{{ product.name }}</h2>
             {% if product.priceafterdiscount %}
-                <p class="text-muted"><strike>{{ product.price }} ₽</strike></p>
-                <p class="h4 text-success">{{ product.priceafterdiscount }} ₽</p>
+                <p class="text-muted">цена  <strike> {{ product.price }} ₽</strike></p>
+                <p class="h4 text-success">цена со скидкой {{ product.priceafterdiscount }} ₽</p>
             {% else %}
                 <p class="h4">{{ product.price }} ₽</p>
             {% endif %}

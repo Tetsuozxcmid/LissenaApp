@@ -11,10 +11,7 @@ body {
     color: var(--light-text);
     font-family: 'Segoe UI', system-ui, sans-serif;
 }
-.photo-img{
-    width: 250px;
-    height: 250px;
-}
+
 
 .page-header {
     text-align: center;
@@ -153,6 +150,10 @@ body {
 .footer-contact {
     color: var(--gray-text);
     margin-bottom: 0.5rem;
+}
+
+.ul li nav-item{
+    color: #f26c0c;
 }
 
 .footer-contact i {
