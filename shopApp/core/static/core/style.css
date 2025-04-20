@@ -11,6 +11,10 @@ body {
     color: var(--light-text);
     font-family: 'Segoe UI', system-ui, sans-serif;
 }
+.photo-img{
+    width: 250px;
+    height: 250px;
+}
 
 .page-header {
     text-align: center;

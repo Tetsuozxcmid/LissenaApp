@@ -1,14 +1,15 @@
 from django.shortcuts import render,get_object_or_404
-from .models import Product
+from .models import Product,MainPhoto
 
 # Create your views here.
 
 def auth_home(request):
     
     products = Product.objects.filter(priceafterdiscount__isnull=False)
+    mainphoto = MainPhoto.objects.first()
 
 
-    return render(request, 'core/index.html', {'products': products})
+    return render(request, 'core/index.html', {'products': products,'mainphoto':mainphoto})
 
 
 def category_view(request,category_post):

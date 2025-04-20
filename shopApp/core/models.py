@@ -29,6 +29,11 @@ class Product(models.Model):
     )
     size = models.CharField("Размер", max_length=20, blank=True)
     image = models.ImageField("Изображение", upload_to="products/")
+    image2 = models.ImageField("Изображение", upload_to="products/", null=True, blank=True)
+    image3 = models.ImageField("Изображение", upload_to="products/", null=True, blank=True)
+    image4 = models.ImageField("Изображение", upload_to="products/", null=True, blank=True)
+    image5 = models.ImageField("Изображение", upload_to="products/", null=True, blank=True)
+    image6 = models.ImageField("Изображение", upload_to="products/", null=True, blank=True)
     description = models.TextField("Описание", blank=True)
     created_at = models.DateTimeField("Дата добавления", auto_now_add=True)
 
@@ -38,3 +43,14 @@ class Product(models.Model):
     class Meta:
         verbose_name = "Товар"
         verbose_name_plural = "Товары"
+
+
+class MainPhoto(models.Model):
+    name = models.CharField("Название", max_length=20, blank=True)
+    image = models.ImageField("Изображения",upload_to="pagephotos/")
+
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        verbose_name = "Фотка сайта"
