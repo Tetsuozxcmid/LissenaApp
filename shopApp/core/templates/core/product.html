@@ -1,0 +1,58 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Товар{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            {% if product.image %}
+            <img src="{{ product.image.url }}" class="img-fluid rounded" alt="{{ product.name }}">
+            {% endif %}
+        </div>
+        <div class="col-md-6">
+            <h2>{{ product.name }}</h2>
+            {% if product.priceafterdiscount %}
+                <p class="text-muted"><strike>{{ product.price }} ₽</strike></p>
+                <p class="h4 text-success">{{ product.priceafterdiscount }} ₽</p>
+            {% else %}
+                <p class="h4">{{ product.price }} ₽</p>
+            {% endif %}
+            <p><strong>Размер:</strong> {{ product.size|default:"-" }}</p>
+            <p>{{ product.description|default:"Описание недоступно" }}</p>
+            <a href="{% url 'auth_home' %}" class="btn btn-outline-secondary mt-3">← Назад</a>
+        </div>
+    </div>
+</div>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 footer-column">
+                <h4 class="footer-title">Контакты</h4>
+                <p class="footer-contact"><i class="bi bi-telephone"></i> +7 (123) 456-78-90</p>
+                <p class="footer-contact"><i class="bi bi-envelope"></i> info@example.com</p>
+            </div>
+            
+            <div class="col-md-4 footer-column">
+                <h4 class="footer-title">Мы в соцсетях</h4>
+                <a href="https://t.me/koriaaaka" class="social-link" target="_blank"><i class="bi bi-telegram"></i> Telegram</a>
+                <a href="https://vk.com/promiseya" class="social-link" target="_blank"><i class="bi bi-vimeo"></i> ВКонтакте</a>
+                <a href="https://wa.me/79123456789" class="social-link" target="_blank"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+            </div>
+            
+            <div class="col-md-4 footer-column">
+                <h4 class="footer-title">О магазине</h4>
+                <p class="footer-contact">Качественная одежда по доступным ценам</p>
+                <p class="footer-contact">Быстрая доставка по всей России</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2024 Магазин одежды. Все права защищены.
+        </div>
+    </div>
+</footer>
+{% endblock %}
+
